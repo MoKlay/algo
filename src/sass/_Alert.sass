@@ -1,0 +1,49 @@
+@import _variables
+@import _mixins
+
+.alert
+  position: absolute
+  bottom: 20px
+  left: 20px
+  right: 20px
+  border: 1px solid $alert-border-color
+  padding: 10px
+  margin: 10px
+  background-color: $alert-background-color
+  color: darken($alert-border-color, 20%)
+  border-radius: 4px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  box-shadow: 0 0 4px black
+  animation: open 0.5s ease-in-out
+  &.closing
+    animation: close 0.5s ease-in-out
+
+  @keyframes open
+    0%
+      opacity: 0
+    100%
+      
+  @keyframes close
+    0%
+      
+    100%
+      opacity: 0
+
+  &.success
+    background: green
+    color: white
+    border-color: white
+  &.warning
+    background: yellow
+    color: black
+    border-color: white
+
+    
+
+  button
+    +button-style($secondary-color, white)
+    font-size: 0.8em
+    padding: 5px 8px
+    cursor: pointer

@@ -1,0 +1,123 @@
+@import _variables
+@import _mixins
+
+.container
+  font-family: sans-serif
+  background-color: $background-color
+  color: $text-color
+  height: 100vh
+  display: flex
+  flex-direction: column
+
+.heading
+  color: $primary-color
+  margin: 20px
+
+.buttons
+  margin: 20px
+  display: flex
+  gap: 20px
+  button
+    +button-style($primary-color, white)
+
+
+.con-table
+  padding: 20px
+  table
+    width: 100%
+    border-collapse: collapse
+    margin-bottom: 20px
+    flex-grow: 1
+
+    th,
+    td
+      border: 1px solid $border-color
+      padding: 8px
+      text-align: left
+
+    th
+      background-color: lighten($background-color, 5%)
+      font-weight: bold
+
+    .data
+      display: flex
+      flex-direction: column
+      gap: 10px
+      label
+        display: flex
+        cursor: text
+        input[type="text"]
+          background: transparent
+          border: 0
+          outline: 0
+
+
+.removeButton
+  +button-style($secondary-color, white)
+  margin-left: 5px
+  font-size: 0.8em
+  padding: 5px 8px
+
+.balanceInfo
+  margin-top: 20px
+  font-weight: bold
+
+  p
+    margin-bottom: 5px
+
+    &.balanced
+      color: green
+
+    &.unbalanced
+      color: $secondary-color
+  
+
+
+table 
+  width: 100%
+  border-collapse: collapse
+  margin-bottom: 20px
+
+  th,
+  td 
+    border: 1px solid $border-color
+    padding: 8px
+    text-align: left
+  
+
+  th 
+    background-color: lighten($background-color, 5%)
+    font-weight: bold
+  
+
+  input[type="number"] 
+    width: 80px
+    padding: 5px
+    border: 1px solid $border-color
+    border-radius: 4px
+    text-align: right
+  
+
+
+.removeButton 
+  @include button-style($secondary-color, white)
+  margin-left: 5px
+  font-size: 0.8em
+  padding: 5px 8px
+
+
+.balanceInfo 
+  margin-top: 20px
+  font-weight: bold
+
+  p 
+    margin-bottom: 5px
+  
+
+  .balanced 
+    color: green
+  
+
+  .unbalanced 
+    color: $secondary-color
+  
